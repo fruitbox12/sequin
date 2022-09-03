@@ -5,6 +5,7 @@ import { NotificationProvider } from 'web3uikit'
 import {allReducers} from '../components/reducers/reducers'
 import {createStore} from 'redux'
 import { Provider } from 'react-redux'
+//require("dotenv").config()
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -12,7 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 
   return (
-    <MoralisProvider appId='xxxx' serverUrl='xxxx'>
+    <MoralisProvider appId="xxxx" serverUrl="xxxx" initializeOnMount = {false}>
       <NotificationProvider>
         <Provider store = {store}>
         <Component {...pageProps} />

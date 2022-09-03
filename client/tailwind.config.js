@@ -16,7 +16,8 @@ module.exports = {
         poppins: ["poppins", 'sans-serif'],
         roboto: ["roboto", 'sans-serif'],
         hubballi: ["hubballi", 'sans-serif'],
-        opensans: ['Open Sans', 'Sans Serif']
+        opensans: ['Open Sans', 'Sans Serif'],
+        oswald: ['Oswald', 'Sans Serif']
       }
     },
   },

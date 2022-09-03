@@ -13,7 +13,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={`${styles.gradient}`}>
-        <Navbar />
+        <Navbar rentals = {false}/>
         <Mainbody/>
       </div>
     </div>

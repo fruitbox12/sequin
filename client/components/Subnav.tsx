@@ -14,7 +14,7 @@ import { pushDestination } from './reducers/actions';
 
 function Subnav() {
 
-    const { enableWeb3 } = useMoralis();
+    //const { enableWeb3 } = useMoralis();
 
     const dispatch = useDispatch()
 
@@ -33,7 +33,7 @@ function Subnav() {
     }
 
     return (
-        <div className={`w-[60rem] h-[10%] border-2 bg-[#ffffff] border-white rounded-3xl flex flex-row items-center justify-center`}>
+        <div className={`w-[80%] h-[10%] border-2 bg-[#ffffff] border-white rounded-3xl flex flex-row items-center justify-center`}>
             <div className={`w-[23%] h-full flex flex-col items-start justify-center pl-2 `}>
                 <h4 className={`text-sm font-bold`}>Location</h4>
                 <input list='cities' className={`text-xs h-[1.5rem] w-[90%] outline-none cursor-pointer`} placeholder='Lagos' onChange={(e) => setDestination(e.target.value)} />

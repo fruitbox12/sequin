@@ -1,8 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-// import Navbar from '../components/Navbar'
-// import Mainbody from '../components/Mainbody'
+import styles from '../styles/Rentals.module.css'
+import Navbar from '../components/Navbar'
+import Rentalsbody from '../components/RentalsBody'
 
 const Rentals: NextPage = () => {
   return (
@@ -12,10 +12,8 @@ const Rentals: NextPage = () => {
         <meta name="description" content="Hotel App: CodeByDolapo" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={`${styles.gradient}`}>
-        {/* <Navbar />
-        <Mainbody/> */}
-      </div>
+      <Navbar rentals={true} />
+      <Rentalsbody/>
     </div>
   )
 }
