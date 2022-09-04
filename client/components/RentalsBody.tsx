@@ -1,7 +1,7 @@
 import Bedspace from './Bedspace'
 import styles from '../styles/rentalsbody.module.css'
 import { lagos } from './data/locations'
-
+import RentalsMap from './RentalsMap'
 
 // interface Props {
 //     city: string,
@@ -13,6 +13,13 @@ import { lagos } from './data/locations'
 //     name: string,
 //     pricePerDay: string
 // }
+
+
+let coords: any[] = []
+lagos.forEach((e)=>{
+    coords.push({lat: e.lat, long: e.long})
+})
+
 
 
 function RentalsBody() {
@@ -39,6 +46,7 @@ function RentalsBody() {
                 </div>
             </div>
             <div className={`w-[50%] h-[100%] border-2 border-grey`}>
+                <RentalsMap location = {coords}/>
             </div>
         </div>
     )
