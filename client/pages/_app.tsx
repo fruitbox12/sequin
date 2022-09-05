@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 
   return (
-    <MoralisProvider appId="xxxx" serverUrl="xxxx" initializeOnMount = {false}>
+    <MoralisProvider appId="6RDIAxHMb3kj3Lw8weF9PVkwXWoOpkLmRlMDBtBl" serverUrl="https://5crub2u2jzju.usemoralis.com:2053/server" initializeOnMount = {false}>
       <NotificationProvider>
         <Provider store = {store}>
         <Component {...pageProps} />
