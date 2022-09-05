@@ -2,22 +2,12 @@ import Bedspace from './Bedspace'
 import styles from '../styles/rentalsbody.module.css'
 import { lagos } from './data/locations'
 import RentalsMap from './RentalsMap'
-
-// interface Props {
-//     city: string,
-//     unoDescription: string,
-//     dosDescription: string,
-//     imgUrl: string,
-//     lat: string,
-//     long: string,
-//     name: string,
-//     pricePerDay: string
-// }
+//import { useEffect, useState, useMemo } from 'react'
 
 
 let coords: any[] = []
-lagos.forEach((e)=>{
-    coords.push({lat: e.lat, long: e.long})
+lagos.forEach((e) => {
+    coords.push({ lat: e.lat, long: e.long })
 })
 
 
@@ -40,16 +30,29 @@ function RentalsBody() {
                                 long={long}
                                 name={name}
                                 pricePerDay={pricePerDay}
+                                key={Math.floor(Math.random() * 10000)}
                             />
                         )
                     })}
                 </div>
             </div>
             <div className={`w-[50%] h-[100%] border-2 border-grey`}>
-                <RentalsMap location = {coords}/>
+                <RentalsMap location={coords} center = {coords[Math.floor(Math.random() * coords.length)]} />
             </div>
         </div>
     )
 }
 
-export default RentalsBody
+export default RentalsBody;
+
+
+// function getAvgCoord(){
+    //     let arr = Object.keys(coords) ///remember, 'locations' is the array of location objects you import
+    //     let getLat = (key: any) => coords[key]["lat"]
+    //     avgLat = arr.reduce((a, c) => a + Number(getLat(c)), 0) / arr.length
+    
+    //     let getLong = (key: any) => coords[key]["long"]
+    //     avgLong = arr.reduce((a, c) => a + Number(getLong(c)), 0) / arr.length
+
+    //     return avgCoord = {lat: avgLat, long: avgLong}
+    // }

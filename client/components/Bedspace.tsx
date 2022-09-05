@@ -13,8 +13,8 @@ interface Props{
 }
 
 function Bedspace({city, unoDescription, dosDescription, imgUrl, lat, long, name, pricePerDay}: Props) {
+  
   return (
-
 
 
     <div className={`max-w-[85%] w-[50rem] min-h-[11rem] h-[11rem] rounded-xl flex flex-row my-5 border-[1px] border-grey ${styles.bedspace}`}>

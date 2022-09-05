@@ -43,7 +43,7 @@ function Navbar(rentals: any) {
                     <div className={`w-[10%] h-full flex justify-end items-center pr-5`}>
                         {/* <Link href='/rentals'> */}
                         <div className={`rounded-full w-[2.5rem] h-[2.5rem] bg-[#EB4E5F] flex items-center justify-center cursor-pointer`}>
-                            <SearchIcon className={`${styles.searchIcon}`} onClick={``} />
+                            <SearchIcon className={`${styles.searchIcon}`} />
                         </div>
                         {/* </Link> */}
                     </div>
