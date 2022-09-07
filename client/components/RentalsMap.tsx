@@ -14,7 +14,7 @@ function RentalsMap({ locations, google, center }: any) {
                     google={google}
                     containerStyle={{width: "50vw", height: "100vh"}}
                     center={center}
-                    initialCenter = {locations[0]}
+                    initialCenter = {center[0]}
                     zoom={13}
                     disableDefaultUI={true}
                 />
