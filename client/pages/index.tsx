@@ -10,7 +10,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Sequin</title>
         <meta name="description" content="Hotel App: CodeByDolapo" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/icons/logo.png" />
       </Head>
       <div className={`${styles.gradient}`}>
         <Navbar rentals = {false}/>

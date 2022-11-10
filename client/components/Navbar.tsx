@@ -20,7 +20,7 @@ function Navbar({rentals}: any) {
     return (
         <div className={`w-[93%] h-[10vh] flex justify-around items-center`}>
             <div className={`w-[20%] h-[inherit] flex justify-start items-end`}>
-                {/* <img className = {`w-[70%]`} src = '/icons/airbnb.png' alt = ''/> */}
+                <img className = {`w-[3rem] mx-2 rounded-full`} src = '/icons/logo.png' alt = ''/>
                 {rentals === true ? <h1 className={`text-black text-5xl font-oswald h-[inherit] flex justify-center items-end `}>SEQUIN</h1> :
                     <h1 className={`text-white text-5xl font-oswald h-[inherit] flex justify-center items-end `}>SEQUIN</h1>}
             </div>
