@@ -4,10 +4,13 @@
 
 /server/node_modules
 /server/package-lock.json
-/server/package.json
+
+
+/serverr/node_modules
+/serverr/package-lock.json
+
 
 /client/node_modules
 /client/package-lock.json
-/client/package.json
 
 /Airbnb-starter
