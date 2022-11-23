@@ -27,7 +27,7 @@ describe("Rooms", async function () {
     })
 
     it("Mints and transfers the nfts", async () => {
-        console.log(transaction)
+        console.log(transaction.hash)
     })
 
     it("Checks the total supply", async () => {
@@ -45,7 +45,7 @@ describe("Rooms", async function () {
     it("Delivers NFTs", async () => {
         let rentReceipt = await deployedRoom.sendNFT(deployedReceptionist.address, customer.address, "1")
         await rentReceipt.wait()
-        console.log(rentReceipt.address)
+        console.log(rentReceipt.hash)
         expect(rentReceipt.address).to.not.be.equal("")
     })
 

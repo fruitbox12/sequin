@@ -24,13 +24,11 @@ contract Receptionist {
         customer = _customer;
     }
 
-    function rent(uint tokenId) public payable {
-        string memory _tokenURI = roomAddress.tokenURI(tokenId);
-        roomAddress.mint(_tokenURI, msg.sender);
-        roomAddress.transferFrom(msg.sender, address(this), tokenId);
+    function rent(address sender, address recipient, uint256 tokenId) public payable {
+        roomAddress.sendNFT(sender, recipient, tokenId);
     }
 
-    function receiveRoom(address sender, address recipient, uint256 tokenId) public{
+    function lodgeOut(address sender, address recipient, uint256 tokenId) public{
         roomAddress.acceptNFTs(sender, recipient, tokenId);
     }
 }
