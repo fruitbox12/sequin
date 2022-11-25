@@ -1,13 +1,56 @@
-import { ConnectButton } from 'web3uikit'
-import { useSelector } from 'react-redux'
+// import { ConnectButton } from 'web3uikit'
+// import { useSelector } from 'react-redux'
+import { ethers } from 'ethers';
 import { SearchIcon } from '@heroicons/react/outline'
 import styles from '../styles/navbar.module.css'
+import { useEffect, useState } from 'react';
 
 
-function Navbar({rentals}: any) {
+function Navbar({ rentals }: any) {
+
+    const [connectSwitch, setconnectSwitch] = useState(false)
+    const [account, setAccount] = useState("")
+    const [network, setNetwork] = useState("")
+    const [provider, setProvider] = useState("")
 
     const active = 'text-sm mx-7 h-[inherit] flex justify-center items-end pb-3 border-b-2 border-b-white cursor-pointer'
     const inactive = 'text-sm mx-7 h-[inherit] flex justify-center items-end pb-3 cursor-pointer hover:border-b-[1px] hover:border-b-white'
+
+
+    useEffect(() => {
+        let Window: any = window
+        if (connectSwitch && Window.ethereum !== undefined) {
+
+            let provider = Window.ethereum
+            let ethersProvider = new ethers.providers.Web3Provider(provider);
+            let network = ethersProvider.getNetwork()
+                .then((data: any) => {
+                    setNetwork(data.name)
+                    console.log(network)
+                })
+                .catch((error: any) => {
+                    console.log(error)
+                })
+
+            //setProvider(ethersProvider)
+            //console.log(ethersProvider)
+            //setNetwork(network)
+            Window.ethereum.request({ method: "eth_requestAccounts" })
+                .then((accounts: any) => {
+                    setAccount(accounts[0])
+                    console.log(account)
+                })
+                .catch((err: any) => console.log(err))
+
+        }
+        setconnectSwitch(false)
+    }, [connectSwitch])
+
+
+
+    function connectMetamask() {
+        setconnectSwitch(true)
+    }
 
     //const locationDetails = useSelector((state: { destinationState: any }) => state.destinationState)
 
@@ -20,7 +63,7 @@ function Navbar({rentals}: any) {
     return (
         <div className={`w-[93%] h-[10vh] flex justify-around items-center`}>
             <div className={`w-[20%] h-[inherit] flex justify-start items-end`}>
-                <img className = {`w-[3rem] mx-2 rounded-full`} src = '/icons/logo.png' alt = ''/>
+                <img className={`w-[3rem] mx-2 rounded-full`} src='/icons/logo.png' alt='' />
                 {rentals === true ? <h1 className={`text-black text-5xl font-oswald h-[inherit] flex justify-center items-end `}>SEQUIN</h1> :
                     <h1 className={`text-white text-5xl font-oswald h-[inherit] flex justify-center items-end `}>SEQUIN</h1>}
             </div>
@@ -49,9 +92,16 @@ function Navbar({rentals}: any) {
                     <div className={`${inactive}`}>Online Experiences</div>
                 </div>
             }
-            <div className={`w-[25%] h-[inherit] flex justify-end items-center`}>
-                <ConnectButton />
-            </div>
+            {account ?
+                <div className={`w-[25%] h-[inherit] flex justify-end items-center`}>
+                    {/* <ConnectButton /> */}
+                    <button className={`w-[12rem] h-[45px] bg-[#1266e4] rounded-lg text-white text-base`} onClick={connectMetamask}>{`${account.slice(0, 6)}...${account.slice(38, 42)}`}</button>
+                </div> :
+                <div className={`w-[25%] h-[inherit] flex justify-end items-center`}>
+                    {/* <ConnectButton /> */}
+                    <button className={`w-[12rem] h-[45px] bg-[#1266e4] rounded-lg text-white text-base`} onClick={connectMetamask}>Connect Wallet</button>
+                </div>
+            }
         </div>
     )
 }
