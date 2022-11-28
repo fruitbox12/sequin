@@ -4,43 +4,55 @@ import { ethers } from 'ethers';
 import { SearchIcon } from '@heroicons/react/outline'
 import styles from '../styles/navbar.module.css'
 import { useEffect, useState } from 'react';
-
+import { saveReceptionistContract, saveRoomContract} from './reducers/actions';
+import { useDispatch } from 'react-redux';
+import { receptionistAddress } from '../../server/src/receptionistAddress'
+import { roomAddress } from '../../server/src/roomAddress'
+import receptionistABI from "../../server/artifacts/contracts/Receptionist.sol/Receptionist.json"
+import roomABI from "../../server/artifacts/contracts/Rooms.sol/Rooms.json"
 
 function Navbar({ rentals }: any) {
 
+    const dispatch = useDispatch()
+    
     const [connectSwitch, setconnectSwitch] = useState(false)
     const [account, setAccount] = useState("")
     const [network, setNetwork] = useState("")
-    const [provider, setProvider] = useState("")
-
+    
+    
     const active = 'text-sm mx-7 h-[inherit] flex justify-center items-end pb-3 border-b-2 border-b-white cursor-pointer'
     const inactive = 'text-sm mx-7 h-[inherit] flex justify-center items-end pb-3 cursor-pointer hover:border-b-[1px] hover:border-b-white'
-
-
+    
+    
     useEffect(() => {
         let Window: any = window
         if (connectSwitch && Window.ethereum !== undefined) {
-
+            
             let provider = Window.ethereum
             let ethersProvider = new ethers.providers.Web3Provider(provider);
             let network = ethersProvider.getNetwork()
-                .then((data: any) => {
+            .then((data: any) => {
                     setNetwork(data.name)
                     console.log(network)
                 })
                 .catch((error: any) => {
                     console.log(error)
                 })
-
-            //setProvider(ethersProvider)
-            //console.log(ethersProvider)
-            //setNetwork(network)
-            Window.ethereum.request({ method: "eth_requestAccounts" })
+                
+                Window.ethereum.request({ method: "eth_requestAccounts" })
                 .then((accounts: any) => {
                     setAccount(accounts[0])
                     console.log(account)
                 })
                 .catch((err: any) => console.log(err))
+                let signer = ethersProvider.getSigner()
+                const receptionist: any = new ethers.Contract(receptionistAddress, receptionistABI.abi, signer)
+                const rooms: any = new ethers.Contract(roomAddress, roomABI.abi, signer)
+
+            if(receptionist){
+                dispatch(saveReceptionistContract(receptionist))
+                dispatch(saveRoomContract(receptionist))
+            }
 
         }
         setconnectSwitch(false)

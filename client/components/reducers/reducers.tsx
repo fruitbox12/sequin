@@ -11,6 +11,26 @@ export const destinationState = (state = [], action: { type: any; obj: any | nev
     }
 }
 
+export const receptionistContract = (state = "", action: {type: string, contractInstance: any})=>{
+    switch(action.type){
+        case "SAVE_RECEPTIONIST_CONTRACT":
+            return state = action.contractInstance
+        default:
+            return state
+    }
+}
+
+export const roomContract = (state = [], action: {type: string, contractInstance: any})=>{
+    switch(action.type){
+        case "SAVE_ROOM_CONTRACT":
+            return state = action.contractInstance
+        default:
+            return state
+    }
+}
+
 export const allReducers = combineReducers({
-    destinationState
+    destinationState,
+    receptionistContract,
+    roomContract
 })
