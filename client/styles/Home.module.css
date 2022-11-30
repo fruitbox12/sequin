@@ -1,15 +1,20 @@
+/* body, html{
+  height: full;
+  width: full;
+} */
+
 .container {
-  min-height: 100vh;
+  min-height: 100vh !important;
   min-width: 100vw;
-  /* background: url('/images/bg2.jpg') no-repeat center center fixed; */
-  /* background-size: cover;
+  background: url('/images/bg2.jpg') no-repeat center center fixed;
+  background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  -webkit-background-size: cover;*/
+  -webkit-background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: imgRotate infinite 80s;
+  /* animation: imgRotate infinite 80s; */
 }
 
 @keyframes imgRotate {
