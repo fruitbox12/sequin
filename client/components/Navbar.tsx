@@ -48,6 +48,12 @@ function Navbar({ rentals }: any) {
                 let signer = ethersProvider.getSigner()
                 const receptionist: any = new ethers.Contract(receptionistAddress, receptionistABI.abi, signer)
                 const rooms: any = new ethers.Contract(roomAddress, roomABI.abi, signer)
+                console.log(receptionist)
+                // console.log(signers)
+
+                let test = ethersProvider.getCode("0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512").then((data: any)=>{
+                    console.log(`the receptionist code is ${data}`)
+                })
 
             if(receptionist){
                 dispatch(saveReceptionistContract(receptionist))

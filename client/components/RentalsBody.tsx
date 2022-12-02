@@ -20,18 +20,23 @@ function RentalsBody() {
     let roomsArray = [], totalSupply: number = 0
 
     const roomContract = useSelector((state: { roomContract: any }) => state.roomContract)
+    const receptionistContract = useSelector((state: { receptionistContract: any }) => state.receptionistContract)
 
     useEffect(()=>{
-        getNumberOfRooms()
-        if(totalSupply != 0){
-            for(let i = 0; i < totalSupply; i++){
-                roomsArray.push()
-            }
-        }
+        // getNumberOfRooms()
+        // if(totalSupply != 0){
+        //     for(let i = 0; i < totalSupply; i++){
+        //         roomsArray.push()
+        //     }
+        // }
+        console.log(receptionistContract)
     }, [])
 
     async function getNumberOfRooms(){
-        totalSupply = await roomContract.totalSupply()
+        let totalSupply = await receptionistContract.getTotalSupply()
+        let tokenURL = await receptionistContract.getTokenURL("1")
+        console.log(totalSupply.toString())
+        console.log(tokenURL.toString())
     }
     
 
@@ -60,6 +65,7 @@ function RentalsBody() {
             <div className={`md:w-[50%] md:h-[100%] xs:w-0 xs:h-0`}>
                 <RentalsMap location={coords} center = {coords[Math.floor(Math.random() * coords.length)]} />
             </div>
+            {/* <button className = {`bg-black`} onClick = {getNumberOfRooms}>Test</button> */}
         </div>
     )
 }
