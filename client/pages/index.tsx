@@ -6,7 +6,7 @@ import Mainbody from '../components/Mainbody'
 
 const Home: NextPage = () => {
   return (
-    <div className={`${styles.container} font-opensans w-[100vw] h-[100vh]`}>
+    <div className={`${styles.container} font-opensans`}>
       <Head>
         <title>Sequin</title>
         <meta name="description" content="Hotel App: CodeByDolapo" />

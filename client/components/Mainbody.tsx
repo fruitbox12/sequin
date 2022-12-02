@@ -11,7 +11,6 @@ function Mainbody(){
         <div className = {`w-full h-[85vh] flex flex-col justify-around items-center`}>
            <Subnav/>
            <Intro/>
-           
         </div>
     )
 }

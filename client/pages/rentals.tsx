@@ -12,8 +12,10 @@ const Rentals: NextPage = () => {
         <meta name="description" content="Hotel App: CodeByDolapo" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar rentals={true} />
-      <Rentalsbody/>
+      {/* <div className={styles.subContainer}> */}
+        <Navbar rentals={true} />
+        <Rentalsbody />
+      {/* </div> */}
     </div>
   )
 }

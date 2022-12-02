@@ -75,22 +75,22 @@ function Navbar({ rentals }: any) {
 
 
     return (
-        <div className={`w-[93%] lg:h-[60px] flex md:justify-around items-center xs:h-[50px] xs:justify-between`}>
+        <div className={`w-[98%] lg:h-[60px] flex xl:justify-around items-center xs:h-[50px] xs:justify-between`}>
             <div className={`w-[20%] h-[inherit] flex justify-start md:items-end xs:items-center`}>
                 <img className={`lg:w-[3rem] mx-2 rounded-full xs:w-[2rem]`} src='/icons/logo.png' alt='' />
-                {rentals === true ? <h1 className={`text-black lg:text-5xl font-oswald h-[inherit] flex justify-center lg:items-end md:text-2xl xs:text-lg xs:items-center`}>SEQUIN</h1> :
-                    <h1 className={`text-white lg:text-5xl font-oswald h-[inherit] flex justify-center lg:items-end md:text-2xl xs:text-lg xs:items-center`}>SEQUIN</h1>}
+                {rentals === true ? <h1 className={`text-black lg:text-5xl font-oswald h-[inherit] flex justify-center md:items-end md:text-2xl xs:text-lg xs:items-center`}>SEQUIN</h1> :
+                    <h1 className={`text-white lg:text-5xl font-oswald h-[inherit] flex justify-center md:items-end md:text-2xl xs:text-lg xs:items-center`}>SEQUIN</h1>}
             </div>
             {rentals === true ?
-                <div className={`md:w-[55%] h-[inherit] flex flex-row items-center justify-around rounded-3xl xs:w-0 ${styles.rentalsPanel}`}>
+                <div className={`xl:w-[55%] h-[inherit] flex flex-row items-center justify-around rounded-3xl xs:w-0 ${styles.rentalsPanel}`}>
                     <div className={`w-[23%] h-full flex flex-col items-start justify-center pl-2`}>
-                        <h4 className={`md:text-sm font-bold xs:text-[0rem]`}>{`Lagos`}</h4>
+                        <h4 className={`xl:text-sm font-bold xs:text-[0rem]`}>{`Lagos`}</h4>
                     </div>
                     <div className={`w-[23%] h-full flex flex-col items-start justify-center pl-2`}>
-                        <h4 className={`md:text-sm font-bold xs:text-[0rem]`}>{`Apr 01 - Apr 02`}</h4>
+                        <h4 className={`xl:text-sm font-bold xs:text-[0rem]`}>{`Apr 01 - Apr 02`}</h4>
                     </div>
                     <div className={`w-[23%] h-full flex flex-col items-start justify-center pl-2`}>
-                        <h4 className={`md:text-sm font-bold xs:text-[0rem]`}>{`2-guests`}</h4>
+                        <h4 className={`xl:text-sm font-bold xs:text-[0rem]`}>{`2-guests`}</h4>
                     </div>
                     <div className={`w-[10%] h-full flex justify-end items-center pr-5`}>
                         {/* <Link href='/rentals'> */}

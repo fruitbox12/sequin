@@ -26,7 +26,7 @@ function Bedspace({ city, unoDescription, dosDescription, imgUrl, lat, long, nam
   return (
 
 
-    <div className={`md:max-w-[85%] md:w-[50rem] md:min-h-[11rem] md:h-[11rem] rounded-xl flex flex-row my-5 border-[1px] border-grey xs:max-w-[100%] xs:w-[100%] xs:min-h-[11rem] xs:h-[11rem] ${styles.bedspace}`}>
+    <div className={`md:max-w-[98%] md:w-[50rem] md:min-h-[11rem] md:h-[11rem] rounded-xl flex flex-row my-5 border-[1px] border-grey xs:max-w-[100%] xs:w-[100%] xs:min-h-[11rem] xs:h-[11rem] ${styles.bedspace}`}>
       <div className={`w-[45%] h-full border-2 border-grey flex justify-center align-center rounded-xl`}>
         <img className={`w-full h-auto rounded-xl`} alt='' src={imgUrl} />
       </div>
