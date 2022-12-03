@@ -1,10 +1,8 @@
-// import { ConnectButton } from 'web3uikit'
-// import { useSelector } from 'react-redux'
 import { ethers } from 'ethers';
 import { SearchIcon } from '@heroicons/react/outline'
 import styles from '../styles/navbar.module.css'
 import { useEffect, useState } from 'react';
-import { saveReceptionistContract, saveRoomContract} from './reducers/actions';
+import { saveReceptionistContract, saveRoomContract, saveAccount } from './reducers/actions';
 import { useDispatch } from 'react-redux';
 import { receptionistAddress } from '../../server/src/receptionistAddress'
 import { roomAddress } from '../../server/src/roomAddress'
@@ -14,53 +12,51 @@ import roomABI from "../../server/artifacts/contracts/Rooms.sol/Rooms.json"
 function Navbar({ rentals }: any) {
 
     const dispatch = useDispatch()
-    
+
     const [connectSwitch, setconnectSwitch] = useState(false)
     const [account, setAccount] = useState("")
-    const [network, setNetwork] = useState("")
-    
-    
+    // const [network, setNetwork] = useState("")
+
+
     const active = 'xl:text-sm mx-7 h-[inherit] flex justify-center items-end pb-3 border-b-2 border-b-white cursor-pointer xs:text-[0]'
     const inactive = 'xl:text-sm mx-7 h-[inherit] flex justify-center items-end pb-3 cursor-pointer hover:border-b-[1px] hover:border-b-white xs:text-[0]'
-    
-    
+
+
     useEffect(() => {
         let Window: any = window
         if (connectSwitch && Window.ethereum !== undefined) {
-            
+
             let provider = Window.ethereum
             let ethersProvider = new ethers.providers.Web3Provider(provider);
-            let network = ethersProvider.getNetwork()
-            .then((data: any) => {
-                    setNetwork(data.name)
-                    console.log(network)
-                })
-                .catch((error: any) => {
-                    console.log(error)
-                })
-                
-                Window.ethereum.request({ method: "eth_requestAccounts" })
+            // let network = ethersProvider.getNetwork()
+            // .then((data: any) => {
+            //         setNetwork(data.name)
+            //         console.log(network)
+            //     })
+            //     .catch((error: any) => {
+            //         console.log(error)
+            //     })
+
+            Window.ethereum.request({ method: "eth_requestAccounts" })
                 .then((accounts: any) => {
                     setAccount(accounts[0])
                     console.log(account)
                 })
                 .catch((err: any) => console.log(err))
-                let signer = ethersProvider.getSigner()
-                const receptionist: any = new ethers.Contract(receptionistAddress, receptionistABI.abi, signer)
-                const rooms: any = new ethers.Contract(roomAddress, roomABI.abi, signer)
-                console.log(receptionist)
-                // console.log(signers)
 
-                let test = ethersProvider.getCode("0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512").then((data: any)=>{
-                    console.log(`the receptionist code is ${data}`)
-                })
+            let signer = ethersProvider.getSigner()
 
-            if(receptionist){
+            const receptionist: any = new ethers.Contract(receptionistAddress, receptionistABI.abi, signer)
+            const rooms: any = new ethers.Contract(roomAddress, roomABI.abi, signer)
+
+
+            if (receptionist) {
                 dispatch(saveReceptionistContract(receptionist))
                 dispatch(saveRoomContract(receptionist))
+                dispatch(saveAccount(account))
             }
 
-        } else if (connectSwitch && window.ethereum == undefined){
+        } else if (connectSwitch && Window.ethereum == undefined) {
             alert("Please Download Metamask")
         }
         setconnectSwitch(false)
@@ -115,7 +111,7 @@ function Navbar({ rentals }: any) {
             {account ?
                 <div className={`md:w-[25%] h-[inherit] flex justify-end items-center xs:w-50%`}>
                     {/* <ConnectButton /> */}
-                    <button className={`w-[12rem] md:h-[45px] bg-[#1266e4] rounded-lg text-white lg:text-base xs:text-sm xs:w-[10rem] xs:h-[35px]`} onClick={connectMetamask}>{`${account.slice(0, 6)}...${account.slice(38, 42)}`}</button>
+                    <button className={`w-[12rem] md:h-[45px] bg-[#1266e4] rounded-lg text-white lg:text-base xs:text-sm xs:w-[10rem] xs:h-[35px]`}>{`${account.slice(0, 6)}...${account.slice(38, 42)}`}</button>
                 </div> :
                 <div className={`md:w-[25%] h-[inherit] flex justify-end items-center xs:w-50%`}>
                     <button className={`w-[12rem] md:h-[45px] bg-[#1266e4] rounded-lg text-white lg:text-base xs:text-sm xs:w-[10rem] xs:h-[35px]`} onClick={connectMetamask}>Connect Wallet</button>

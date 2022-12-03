@@ -9,6 +9,7 @@ export const lagos = [
         long: "-73.999005",
         name: "Apartment in Lekki", 
         pricePerDay: "0.04",
+        index: 1
     },
     {
         city: "Lagos",
@@ -20,6 +21,7 @@ export const lagos = [
         long: "-73.999005",
         name: "Apartment in Banana Island",
         pricePerDay: "0.05",
+        index: 2
     },
     {
         city: "Lagos",
@@ -30,6 +32,7 @@ export const lagos = [
         long: "-73.999005",
         name: "Apartment in Ikoyi",
         pricePerDay: "0.06",
+        index: 3
     },
     {
         city: "Lagos",
@@ -41,6 +44,19 @@ export const lagos = [
         long: "-73.999005",
         name: "Apartment in Maryland",
         pricePerDay: "0.07",
+        index: 4
+    },
+    {
+        city: "Lagos",
+        unoDescription: "4 Guests • 3 Beds • 1 Rooms",
+        dosDescription: "WiFi • Kitchen • Pool",
+        imgUrl:
+        "../../images/bg11.jpg",
+        lat: "40.716862",
+        long: "-73.999005",
+        name: "Apartment in oniru",
+        pricePerDay: "0.01",
+        index: 7
     },
     {
         city: "Lagos",
@@ -52,17 +68,19 @@ export const lagos = [
         long: "-73.999005",
         name: "Apartment in Victoria Island",
         pricePerDay: "0.02",
+        index: 6
     },
     {
         city: "Lagos",
-        unoDescription: "4 Guests • 3 Beds • 1 Rooms",
-        dosDescription: "WiFi • Kitchen • Pool",
+        unoDescription: "5 Guests • 2 Beds • 7 Rooms",
+        dosDescription: "Library • Kitchen • WiFi",
         imgUrl:
-            "../../images/bg11.jpg",
+            "../../images/bg1.jpg",
         lat: "40.716862",
         long: "-73.999005",
-        name: "Apartment in oniru",
-        pricePerDay: "0.01",
+        name: "Apartment in Ajah",
+        pricePerDay: "0.04",
+        index: 6
     },
 ]
 

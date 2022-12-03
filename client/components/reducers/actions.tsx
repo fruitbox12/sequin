@@ -18,3 +18,10 @@ export const saveRoomContract = (contractInstance: any)=>{
         contractInstance
     }
 }
+
+export const saveAccount = (account: any)=>{
+    return{
+        type: "SAVE_ACCOUNT",
+        account
+    }
+}

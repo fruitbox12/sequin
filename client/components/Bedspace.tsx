@@ -1,14 +1,10 @@
 //import { Button } from "web3uikit"
-import { useEffect, useState } from 'react'
+import { ethers } from 'ethers'
 import { useSelector } from 'react-redux'
 import styles from '../styles/bedspace.module.css'
-import { ethers, Contract } from 'ethers';
 import { receptionistAddress } from '../../server/src/receptionistAddress'
-import { roomAddress } from '../../server/src/roomAddress'
-import receptionistABI from "../../server/artifacts/contracts/Receptionist.sol/Receptionist.json"
-import roomABI from "../../server/artifacts/contracts/Rooms.sol/Rooms.json"
-import { Rooms } from '../../server/typechain-types/contracts/Rooms'
-import { Receptionist } from '../../server/typechain-types/contracts/Receptionist'
+
+
 
 interface Props {
   city: string,
@@ -18,10 +14,26 @@ interface Props {
   lat: string,
   long: string,
   name: string,
-  pricePerDay: string
+  pricePerDay: string,
+  index: number
 }
 
-function Bedspace({ city, unoDescription, dosDescription, imgUrl, lat, long, name, pricePerDay }: Props) {
+function Bedspace({ city, unoDescription, dosDescription, imgUrl, lat, long, name, pricePerDay, index }: Props) {
+
+  const receptionistContract = useSelector((state: { receptionistContract: any }) => state.receptionistContract)
+  const account = useSelector((state: { account: any }) => state.account)
+
+  function etherToWei(_etherAmount: any) {
+    return ethers.utils.parseUnits(_etherAmount, "ether")
+  }
+
+  function rent() {
+    let rentReceipt = receptionistContract.rent(receptionistAddress, account, index)
+    let payReceipt = receptionistContract.pay("0xC3886B1637C7a7F263C6533a59976014883D615d", { value: etherToWei(pricePerDay)} )
+    console.log(rentReceipt)
+    console.log(payReceipt)
+  }
+
 
   return (
 
@@ -39,7 +51,7 @@ function Bedspace({ city, unoDescription, dosDescription, imgUrl, lat, long, nam
           </div>
         </div>
         <div className={`w-full h-[40%] flex flex-row items-center justify-between px-3 py-2`}>
-          <button className={`bg-[#1266e4] md:w-[7rem] h-[1.5rem] rounded-md text-white text-sm xs:w-[5rem]`}>Stay Here</button>
+          <button className={`bg-[#1266e4] md:w-[7rem] h-[1.5rem] rounded-md text-white text-sm xs:w-[5rem]`}onClick = {rent}>Stay Here</button>
           <h5 className={`text-xs font-bold`}>{pricePerDay} ETH/Day</h5>
         </div>
       </div>
