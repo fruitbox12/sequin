@@ -1,8 +1,37 @@
 
-/client/server/node_modules
-/client/server/package-lock.json
+/server/node_modules
+/server/package-lock.json
 
 
-/sequin/client/node_modules
-/sequin/client/package-lock.json
+/client/node_modules
+/client/package-lock.json
 
+
+/node_modules
+/client/.pnp
+/client/.pnp.js
+
+# testing
+/client//coverage
+
+# next.js
+/client/.next/
+/client/out/
+
+# production
+/client/build
+
+# misc
+.DS_Store
+*.pem
+
+
+.env
+/server/coverage
+/server/coverage.json
+/server/typechain
+/server/typechain-types
+
+#Hardhat files
+/server/cache
+/server/artifacts
