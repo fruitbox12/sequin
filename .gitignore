@@ -2,15 +2,10 @@
 /package.json
 /node_modules
 
-server/node_modules
-server/package-lock.json
-
-
-/serverr/node_modules
-/serverr/package-lock.json
+/server/node_modules
+/server/package-lock.json
 
 
 /client/node_modules
 /client/package-lock.json
 
-/Airbnb-starter
