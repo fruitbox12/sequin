@@ -2,10 +2,10 @@
 /package.json
 /node_modules
 
-/server/node_modules
-/server/package-lock.json
+/sequin/server/node_modules
+/sequin/server/package-lock.json
 
 
-/client/node_modules
-/client/package-lock.json
+/sequin/client/node_modules
+/sequin/client/package-lock.json
 
