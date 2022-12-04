@@ -2,8 +2,8 @@
 /package.json
 /node_modules
 
-/server/node_modules
-/server/package-lock.json
+server/node_modules
+server/package-lock.json
 
 
 /serverr/node_modules
