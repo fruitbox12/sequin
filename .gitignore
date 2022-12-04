@@ -1,6 +1,6 @@
 
-/sequin/server/node_modules
-/sequin/server/package-lock.json
+/client/server/node_modules
+/client/server/package-lock.json
 
 
 /sequin/client/node_modules
