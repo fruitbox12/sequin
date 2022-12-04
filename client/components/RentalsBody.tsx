@@ -3,19 +3,33 @@ import styles from '../styles/rentalsbody.module.css'
 import { lagos } from './data/locations'
 import RentalsMap from './RentalsMap'
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 // import { useEffect } from 'react';
 //import { useEffect, useState, useMemo } from 'react'
 
 
 
-let coords: any[] = []
-lagos.forEach((e) => {
-    coords.push({ lat: e.lat, long: e.long })
-})
 
 
 
 function RentalsBody() {
+    // let coords: any[] = []
+    // useEffect(()=>{
+       
+    // }, [])
+
+    function getAvgCoord(coords: any){
+        let arr = Object.keys(coords) ///remember, 'locations' is the array of location objects you import
+        let getLat = (key: any) => coords[key]["lat"]
+        let avgLat = arr.reduce((a, c) => a + Number(getLat(c)), 0) / arr.length
+        
+        let getLong = (key: any) => coords[key]["long"]
+        let avgLong = arr.reduce((a, c) => a + Number(getLong(c)), 0) / arr.length
+        let avgCoord
+    
+            return avgCoord = {lat: avgLat, long: avgLong}
+    }
+    
 
     let roomsArray = [], totalSupply: number = 0
 
@@ -59,7 +73,8 @@ function RentalsBody() {
                 </div>
             </div>
             <div className={`md:w-[50%] md:h-[100%] xs:w-0 xs:h-0`}>
-                <RentalsMap location={coords} center = {coords[Math.floor(Math.random() * coords.length)]} />
+                <RentalsMap location={lagos} center = {getAvgCoord(lagos)} />
+                {/* <RentalsMap location={coords} center = {coords[Math.floor(Math.random() * coords.length)]} /> */}
             </div>
             {/* <button className = {`bg-black`} onClick = {getNumberOfRooms}>Test</button> */}
         </div>

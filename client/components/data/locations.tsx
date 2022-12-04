@@ -5,9 +5,9 @@ export const lagos = [
         dosDescription: "Pool • Library • Living Area",
         imgUrl:
             "../../images/bg1.jpg",
-        lat: "40.716862",
-        long: "-73.999005",
-        name: "Apartment in Lekki", 
+        lat: "6.4698",
+        long: "3.5852",
+        name: "Apartment in Lekki",
         pricePerDay: "0.04",
         index: 1
     },
@@ -17,8 +17,8 @@ export const lagos = [
         dosDescription: "Wifi • Library • Pool",
         imgUrl:
             "../../images/bg3.jpg",
-        lat: "40.716862",
-        long: "-73.999005",
+        lat: "3.4500",
+        long: "6.4667",
         name: "Apartment in Banana Island",
         pricePerDay: "0.05",
         index: 2
@@ -28,8 +28,9 @@ export const lagos = [
         unoDescription: "1 Guests • 1 Beds • 2 Rooms",
         dosDescription: "Wifi • Garage • Living Area",
         imgUrl:
-            "../../images/bg6.jpg", lat: "40.716862",
-        long: "-73.999005",
+            "../../images/bg6.jpg",
+        lat: "6.4698",
+        long: "3.5852",
         name: "Apartment in Ikoyi",
         pricePerDay: "0.06",
         index: 3
@@ -40,8 +41,8 @@ export const lagos = [
         dosDescription: "Library • Kitchen • Pool",
         imgUrl:
             "../../images/bg7.jpg",
-        lat: "40.716862",
-        long: "-73.999005",
+        lat: "6.4698",
+        long: "3.5852",
         name: "Apartment in Maryland",
         pricePerDay: "0.07",
         index: 4
@@ -51,9 +52,9 @@ export const lagos = [
         unoDescription: "4 Guests • 3 Beds • 1 Rooms",
         dosDescription: "WiFi • Kitchen • Pool",
         imgUrl:
-        "../../images/bg11.jpg",
-        lat: "40.716862",
-        long: "-73.999005",
+            "../../images/bg11.jpg",
+        lat: "6.4698",
+        long: "3.5852",
         name: "Apartment in oniru",
         pricePerDay: "0.01",
         index: 7
@@ -64,8 +65,8 @@ export const lagos = [
         dosDescription: "Living Area • Kitchen • Pool",
         imgUrl:
             "../../images/bg8.jpg",
-        lat: "40.716862",
-        long: "-73.999005",
+        lat: "3.4219",
+        long: "6.4281",
         name: "Apartment in Victoria Island",
         pricePerDay: "0.02",
         index: 6
@@ -76,8 +77,8 @@ export const lagos = [
         dosDescription: "Library • Kitchen • WiFi",
         imgUrl:
             "../../images/bg1.jpg",
-        lat: "40.716862",
-        long: "-73.999005",
+        lat: "3.5725",
+        long: "6.4646",
         name: "Apartment in Ajah",
         pricePerDay: "0.04",
         index: 6

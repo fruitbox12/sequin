@@ -28,19 +28,12 @@ function Navbar({ rentals }: any) {
 
             let provider = Window.ethereum
             let ethersProvider = new ethers.providers.Web3Provider(provider);
-            // let network = ethersProvider.getNetwork()
-            // .then((data: any) => {
-            //         setNetwork(data.name)
-            //         console.log(network)
-            //     })
-            //     .catch((error: any) => {
-            //         console.log(error)
-            //     })
 
             Window.ethereum.request({ method: "eth_requestAccounts" })
                 .then((accounts: any) => {
                     setAccount(accounts[0])
-                    console.log(account)
+                    dispatch(saveAccount(accounts[0]))
+                    console.log(accounts[0])
                 })
                 .catch((err: any) => console.log(err))
 
@@ -53,7 +46,6 @@ function Navbar({ rentals }: any) {
             if (receptionist) {
                 dispatch(saveReceptionistContract(receptionist))
                 dispatch(saveRoomContract(receptionist))
-                dispatch(saveAccount(account))
             }
 
         } else if (connectSwitch && Window.ethereum == undefined) {
@@ -77,7 +69,7 @@ function Navbar({ rentals }: any) {
 
 
     return (
-        <div className={`w-[98%] lg:h-[60px] flex xl:justify-around items-center xs:h-[50px] xs:justify-between`}>
+        <div className={`w-[95%] lg:h-[60px] flex xl:justify-around items-center xs:h-[50px] xs:justify-between`}>
             <div className={`w-[20%] h-[inherit] flex justify-start md:items-end xs:items-center`}>
                 <img className={`lg:w-[3rem] mx-2 rounded-full xs:w-[2rem]`} src='/icons/logo.png' alt='' />
                 {rentals === true ? <h1 className={`text-black lg:text-5xl font-oswald h-[inherit] flex justify-center md:items-end md:text-2xl xs:text-lg xs:items-center`}>SEQUIN</h1> :
@@ -108,10 +100,10 @@ function Navbar({ rentals }: any) {
                     <div className={`${inactive}`}>Online Experiences</div>
                 </div>
             }
-            {account ?
+            {account !== "" ?
                 <div className={`md:w-[25%] h-[inherit] flex justify-end items-center xs:w-50%`}>
                     {/* <ConnectButton /> */}
-                    <button className={`w-[12rem] md:h-[45px] bg-[#1266e4] rounded-lg text-white lg:text-base xs:text-sm xs:w-[10rem] xs:h-[35px]`}>{`${account.slice(0, 6)}...${account.slice(38, 42)}`}</button>
+                    <button className={`w-[12rem] md:h-[45px] bg-[#1266e4] rounded-lg text-white lg:text-base xs:text-sm xs:w-[10rem] xs:h-[35px] transition ease-in`}>{`${account.slice(0, 6)}...${account.slice(38, 42)}`}</button>
                 </div> :
                 <div className={`md:w-[25%] h-[inherit] flex justify-end items-center xs:w-50%`}>
                     <button className={`w-[12rem] md:h-[45px] bg-[#1266e4] rounded-lg text-white lg:text-base xs:text-sm xs:w-[10rem] xs:h-[35px]`} onClick={connectMetamask}>Connect Wallet</button>

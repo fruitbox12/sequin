@@ -27,11 +27,15 @@ function Bedspace({ city, unoDescription, dosDescription, imgUrl, lat, long, nam
     return ethers.utils.parseUnits(_etherAmount, "ether")
   }
 
-  function rent() {
-    let rentReceipt = receptionistContract.rent(receptionistAddress, account, index)
-    let payReceipt = receptionistContract.pay("0xC3886B1637C7a7F263C6533a59976014883D615d", { value: etherToWei(pricePerDay)} )
-    console.log(rentReceipt)
-    console.log(payReceipt)
+  async function rent() {
+    if (account) {
+      let rentReceipt = await receptionistContract.rent(receptionistAddress, account, index)
+      let payReceipt = await receptionistContract.pay("0xC3886B1637C7a7F263C6533a59976014883D615d", { value: etherToWei(pricePerDay)  })
+      console.log(rentReceipt.toString())
+      console.log(payReceipt.toString())
+    } else {
+      alert("Connect to metamask!")
+    }
   }
 
 
@@ -51,7 +55,7 @@ function Bedspace({ city, unoDescription, dosDescription, imgUrl, lat, long, nam
           </div>
         </div>
         <div className={`w-full h-[40%] flex flex-row items-center justify-between px-3 py-2`}>
-          <button className={`bg-[#1266e4] md:w-[7rem] h-[1.5rem] rounded-md text-white text-sm xs:w-[5rem]`}onClick = {rent}>Stay Here</button>
+          <button className={`bg-[#1266e4] md:w-[7rem] h-[1.5rem] rounded-md text-white text-sm xs:w-[5rem]`} onClick={rent}>Stay Here</button>
           <h5 className={`text-xs font-bold`}>{pricePerDay} ETH/Day</h5>
         </div>
       </div>
