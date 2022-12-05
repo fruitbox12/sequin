@@ -1,0 +1,29 @@
+{
+    "name": "Apartment in oniru",
+    "roomNumber": "5",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt nihil neque voluptatum doloribus, quas voluptate consequatur. Officia soluta aspernatur sequi, dolore ipsam odio eos, quod modi atque culpa sed nesciunt.",
+    "image": "../../client/public/images/bg5.jpg",
+    "id": "5",
+    "city": "Lagos",
+    "unoDescription": "4 Guests • 3 Beds • 1 Rooms",
+    "dosDescription": "WiFi • Kitchen • Pool",
+    "imgUrl": "../../images/bg11.jpg",
+    "lat": "40.716862",
+    "long": "-73.999005",
+    "pricePerDay": "0.01",
+    "index": 5,
+    "attributes": [
+        {
+            "trait": "bathroom",
+            "value": "3"
+        },
+        {
+            "trait": "bed",
+            "value": "2"
+        },
+        {
+            "trait": "desks",
+            "value": "5"
+        }
+    ]
+}

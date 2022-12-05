@@ -1,0 +1,29 @@
+{
+    "name": "Apartment in Victoria Island",
+    "roomNumber": "6",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt nihil neque voluptatum doloribus, quas voluptate consequatur. Officia soluta aspernatur sequi, dolore ipsam odio eos, quod modi atque culpa sed nesciunt.",
+    "image": "../../client/public/images/bg6.jpg",
+    "id": "6",
+    "city": "Lagos",
+    "unoDescription": "5 Guests • 8 Beds • 2 Rooms",
+    "dosDescription": "Living Area • Kitchen • Pool",
+    "imgUrl": "../../images/bg8.jpg",
+    "lat": "40.716862",
+    "long": "-73.999005",
+    "pricePerDay": "0.02",
+    "index": 6,
+    "attributes": [
+        {
+            "trait": "bathroom",
+            "value": "3"
+        },
+        {
+            "trait": "bed",
+            "value": "5"
+        },
+        {
+            "trait": "desks",
+            "value": "3"
+        }
+    ]
+}

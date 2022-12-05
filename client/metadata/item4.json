@@ -1,0 +1,29 @@
+{
+    "name": "Apartment in Maryland",
+    "roomNumber": "4",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt nihil neque voluptatum doloribus, quas voluptate consequatur. Officia soluta aspernatur sequi, dolore ipsam odio eos, quod modi atque culpa sed nesciunt.",
+    "image": "../../client/public/images/bg4.jpg",
+    "id": "4",
+    "city": "Lagos",
+    "unoDescription": "4 Guests • 1 Beds • 2 Rooms",
+    "dosDescription": "Library • Kitchen • Pool",
+    "imgUrl": "../../images/bg7.jpg",
+    "lat": "40.716862",
+    "long": "-73.999005",
+    "pricePerDay": "0.07",
+    "index": 4,
+    "attributes": [
+        {
+            "trait": "bathroom",
+            "value": "3"
+        },
+        {
+            "trait": "bed",
+            "value": "2"
+        },
+        {
+            "trait": "desks",
+            "value": "5"
+        }
+    ]
+}

@@ -2,7 +2,7 @@
 import { ethers } from 'ethers'
 import { useSelector } from 'react-redux'
 import styles from '../styles/bedspace.module.css'
-import { receptionistAddress } from '../../server/src/receptionistAddress'
+import { receptionistAddress } from '../src/receptionistAddress'
 
 
 

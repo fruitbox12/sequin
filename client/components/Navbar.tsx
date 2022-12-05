@@ -4,10 +4,10 @@ import styles from '../styles/navbar.module.css'
 import { useEffect, useState } from 'react';
 import { saveReceptionistContract, saveRoomContract, saveAccount } from './reducers/actions';
 import { useDispatch } from 'react-redux';
-import { receptionistAddress } from '../../server/src/receptionistAddress'
-import { roomAddress } from '../../server/src/roomAddress'
-import receptionistABI from "../../server/artifacts/contracts/Receptionist.sol/Receptionist.json"
-import roomABI from "../../server/artifacts/contracts/Rooms.sol/Rooms.json"
+import { receptionistAddress } from '../src/receptionistAddress'
+import { roomAddress } from '../src/roomAddress'
+import receptionistABI from "../artifacts/contracts/Receptionist.sol/Receptionist.json"
+import roomABI from "../artifacts/contracts/Rooms.sol/Rooms.json"
 
 function Navbar({ rentals }: any) {
 

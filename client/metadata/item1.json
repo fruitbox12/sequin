@@ -1,0 +1,29 @@
+{
+    "name": "Apartment in Lekki",
+    "roomNumber": "1",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt nihil neque voluptatum doloribus, quas voluptate consequatur. Officia soluta aspernatur sequi, dolore ipsam odio eos, quod modi atque culpa sed nesciunt.",
+    "image": "../../client/public/images/bg1.jpg",
+    "id": "1",
+    "city": "Lagos",
+    "unoDescription": "4 Guests • 2 Beds • 6 Rooms",
+    "dosDescription": "Pool • Library • Living Area",
+    "imgUrl": "../../images/bg1.jpg",
+    "lat": "40.716862",
+    "long": "-73.999005",
+    "pricePerDay": "0.04",
+    "index": 1,
+    "attributes": [
+        {
+            "trait": "bathroom",
+            "value": "2"
+        },
+        {
+            "trait": "bed",
+            "value": "5"
+        },
+        {
+            "trait": "desks",
+            "value": "4"
+        }
+    ]
+}

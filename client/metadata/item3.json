@@ -1,0 +1,29 @@
+{
+    "name": "Apartment in Ikoyi",
+    "roomNumber": "3",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt nihil neque voluptatum doloribus, quas voluptate consequatur. Officia soluta aspernatur sequi, dolore ipsam odio eos, quod modi atque culpa sed nesciunt.",
+    "image": "../../client/public/images/bg3.jpg",
+    "id": "1",
+    "city": "Lagos",
+    "unoDescription": "1 Guests • 1 Beds • 2 Rooms",
+    "dosDescription": "Wifi • Garage • Living Area",
+    "imgUrl": "../../images/bg6.jpg",
+    "lat": "40.716862",
+    "long": "-73.999005",
+    "pricePerDay": "0.06",
+    "index": 3,
+    "attributes": [
+        {
+            "trait": "bathroom",
+            "value": "2"
+        },
+        {
+            "trait": "bed",
+            "value": "5"
+        },
+        {
+            "trait": "desks",
+            "value": "2"
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "name": "Apartment in Banana Island",
+    "roomNumber": "2",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt nihil neque voluptatum doloribus, quas voluptate consequatur. Officia soluta aspernatur sequi, dolore ipsam odio eos, quod modi atque culpa sed nesciunt.",
+    "image": "../../client/public/images/bg2.jpg",
+    "id": "2",
+    "city": "Lagos",
+    "unoDescription": "3 Guests • 2 Beds • 2 Rooms",
+    "dosDescription": "Wifi • Library • Pool",
+    "imgUrl": "../../images/bg3.jpg",
+    "lat": "40.716862",
+    "long": "-73.999005",
+    "pricePerDay": "0.05",
+    "index": 2,
+    "attributes": [
+        {
+            "trait": "bathroom",
+            "value": "4"
+        },
+        {
+            "trait": "bed",
+            "value": "6"
+        },
+        {
+            "trait": "desks",
+            "value": "3"
+        }
+    ]
+}
