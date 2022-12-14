@@ -25,7 +25,9 @@ function Navbar({ rentals }: any) {
     useEffect(() => {
         let Window: any = window
         if (connectSwitch && Window.ethereum !== undefined) {
-
+            setAccount("")
+            dispatch(saveReceptionistContract(""))
+            dispatch(saveRoomContract(""))
             let provider = Window.ethereum
             let ethersProvider = new ethers.providers.Web3Provider(provider);
 
